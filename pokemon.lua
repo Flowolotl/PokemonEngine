@@ -32,7 +32,7 @@ function pokemon.new(basepokemon) -- DEFAULT
         SpDefense = 1,
         Speed = 1
     }
-    self.isshiny = false-- 1/4096
+    self.isshiny = false -- 1/4096
     -- targets - double battle + earthquake = 0.75x
     -- ignore parental bond aka PB
     -- weather - sun = -0.5 water, +0.5 fire; rain = -0.5 fire, +0.5 water

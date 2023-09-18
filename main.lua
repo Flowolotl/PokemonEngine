@@ -11,3 +11,4 @@ end
 
 local calculated = typeeffective(pokemontype.Fire, { pokemontype.Water, pokemontype.Grass})
 print(calculated)
+print("yay")
