@@ -3,7 +3,7 @@ local nature = require("nature")
 local pokemon = {}
 pokemon.__index = pokemon
 
-function pokemon.new() -- BASE
+function pokemon.new(basepokemon) -- DEFAULT
     local self = setmetatable({}, pokemon)
     self.level = 1
     self.stats = {
@@ -14,7 +14,7 @@ function pokemon.new() -- BASE
         SpDefense = 1,
         Speed = 1
     }
-    self.base = pokemonbase.Delphox
+    self.basestats = pokemonbase.Delphox.stats
     self.nature = nature.Adamant
     self.ev = { -- up to 25 in each randomly. max of 3 stats
         HP = 1,
