@@ -16,7 +16,7 @@ function pokemon.new(basepokemon) -- DEFAULT
     }
     self.basestats = pokemonbase.Delphox.stats
     self.nature = nature.Adamant
-    self.ev = { -- up to 25 in each randomly. max of 3 stats
+    self.ev = { -- 4 evs = +1; up to 25 in each randomly. max of 3 stats
         HP = 1,
         Attack = 1,
         Defense = 1,
@@ -24,7 +24,7 @@ function pokemon.new(basepokemon) -- DEFAULT
         SpDefense = 1,
         Speed = 1
     }
-    self.iv = { -- 4 ivs = +1; all ivs random between 0-31
+    self.iv = { -- all ivs random between 0-31
         HP = 1,
         Attack = 1,
         Defense = 1,

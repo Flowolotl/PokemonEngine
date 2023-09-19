@@ -1,5 +1,10 @@
 local battle = {}
 
+-- STATES:
+--  CLEAR
+--  RAIN
+--  SUNNY
+
 -- drought = sunny day
 -- drizzle = rain dance
 
