@@ -37,6 +37,20 @@ pokemonbase.Delphox = {
         pokemontype.Psychic,
     }
 }
+pokemonbase.Azumarill = {
+    stats = {
+        HP = 100,
+        Attack = 50,
+        Defense = 80,
+        SpAttack = 60,
+        SpDefense = 80,
+        Speed = 50
+    },
+    types = {
+        pokemontype.Fire,
+        pokemontype.Psychic,
+    }
+}
 pokemonbase.Bulbasaur = {
     index = 1,
     stats = {

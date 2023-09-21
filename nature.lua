@@ -1,7 +1,6 @@
 local nature = {}
 
 nature.Adamant = {
-    HP = 1,
     Attack = 1.1,
     Defense = 1,
     SpAttack = 0.9,
@@ -10,7 +9,6 @@ nature.Adamant = {
 }
 
 nature.Serious = {
-    HP = 1,
     Attack = 1,
     Defense = 1,
     SpAttack = 1,

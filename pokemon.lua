@@ -3,34 +3,48 @@ local nature = require("nature")
 local pokemon = {}
 pokemon.__index = pokemon
 
+function pokemon:CalculateStats()
+    local hp = (((self.basestats.HP*2 + self.iv.HP + (self.ev.HP/4))*self.level)/100) + self.level + 10
+    self.stats.HP = math.floor(hp)
+    for k, v in pairs(self.stats) do
+        if k ~= "HP" then
+            local stat = ((((self.basestats[k]*2 + self.iv[k] + (self.ev[k]/4))*self.level)/100)+5) * self.nature[k]
+            self.stats[k] = math.floor(stat)
+        end
+    end
+    for k, v in pairs(self.stats) do
+        print(k, v)
+    end
+end -- ROUND DOWN
+
 function pokemon.new(basepokemon) -- DEFAULT
     local self = setmetatable({}, pokemon)
-    self.level = 1
-    self.stats = {
-        HP = 1,
-        Attack = 1,
-        Defense = 1,
-        SpAttack = 1,
-        SpDefense = 1,
-        Speed = 1
-    }
-    self.basestats = pokemonbase.Delphox.stats
+    self.level = 100
+    self.stats = { -- PLACEHOLDER NUMBER
+        HP = 0, -- PLACEHOLDER NUMBER
+        Attack = 0, -- PLACEHOLDER NUMBER
+        Defense = 0, -- PLACEHOLDER NUMBER
+        SpAttack = 0, -- PLACEHOLDER NUMBER
+        SpDefense = 0, -- PLACEHOLDER NUMBER
+        Speed = 0 -- PLACEHOLDER NUMBER
+    } -- PLACEHOLDER NUMBER
+    self.basestats = pokemonbase.Azumarill.stats
     self.nature = nature.Adamant
-    self.ev = { -- 4 evs = +1; up to 25 in each randomly. max of 3 stats
-        HP = 1,
-        Attack = 1,
-        Defense = 1,
-        SpAttack = 1,
-        SpDefense = 1,
-        Speed = 1
+    self.ev = { -- 4 evs = +1; 252 per is max; 508 max total; up to 25 in each randomly. max of 3 stats
+        HP = 0,
+        Attack = 252,
+        Defense = 0,
+        SpAttack = 0,
+        SpDefense = 0,
+        Speed = 0
     }
     self.iv = { -- all ivs random between 0-31
-        HP = 1,
-        Attack = 1,
-        Defense = 1,
-        SpAttack = 1,
-        SpDefense = 1,
-        Speed = 1
+        HP = 31,
+        Attack = 31,
+        Defense = 31,
+        SpAttack = 31,
+        SpDefense = 31,
+        Speed = 31
     }
     self.isshiny = false -- 1/4096
     -- targets - double battle + earthquake = 0.75x
@@ -54,7 +68,6 @@ function pokemon.new(basepokemon) -- DEFAULT
     -- type effective - strong winds = electric move vs pure flying = 1x
     -- type effective - tar shot affected = 2x with fire move. ex = flamethrower + tar shot vs meowscarada = 4x
     -- burn - attacker is burned and physical move = 0.5x power
-    -- 
     return self
 end
 
