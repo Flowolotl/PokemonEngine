@@ -18,7 +18,7 @@ local battle = {}
 -- GRASS (Grassy Terrain)
 
 battle.terrain = "NONE"
-battle.weather = "RAIN"
+battle.weather = "NONE"
 battle.gravity = 0
 
 battle.Pokemon = {

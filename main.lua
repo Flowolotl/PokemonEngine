@@ -1,5 +1,6 @@
 local pokemon = require("pokemon")
 local pokemontype = require("pokemontype")
+local pokemonbase = require("pokemonbase")
 
 function typeeffective(movetypes, pokemontypes)
     local multiplier = 1
@@ -11,8 +12,8 @@ function typeeffective(movetypes, pokemontypes)
     return multiplier
 end
 
-local newDelphox = pokemon.new()
-newDelphox:CalculateStats()
+local newPokemon = pokemon.new(pokemonbase.Sligma)
+newPokemon:CalculateStats()
 
--- local calculated = typeeffective({ pokemontype.Fire, pokemontype.Dark }, { pokemontype.Steel, pokemontype.Psychic })
--- print(calculated)
+local calculated = typeeffective({ pokemontype.Fire }, newPokemon.basetypes)
+print(calculated)
