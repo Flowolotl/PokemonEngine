@@ -15,7 +15,7 @@ function pokemon:CalculateStats()
     for k, v in pairs(self.stats) do
         print(k, v)
     end
-end -- ROUND DOWN
+end
 
 function pokemon.new(basepokemon) -- DEFAULT
     local self = setmetatable({}, pokemon)
