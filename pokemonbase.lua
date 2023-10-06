@@ -76,7 +76,23 @@ pokemonbase.Palafin = {
         Speed = 45
     },
     types = {
-        pokemontype.Grass,
+        pokemontype.Water,
+    }
+}
+
+pokemonbase.Sligma = {
+    index = 964,
+    stats = {
+        HP = 80,
+        Attack = 129,
+        Defense = 60,
+        SpAttack = 88,
+        SpDefense = 60,
+        Speed = 150
+    },
+    types = {
+        pokemontype.Fire,
+        pokemontype.Steel,
     }
 }
 

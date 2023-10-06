@@ -28,7 +28,8 @@ function pokemon.new(basepokemon) -- DEFAULT
         SpDefense = 0, -- PLACEHOLDER NUMBER
         Speed = 0 -- PLACEHOLDER NUMBER
     } -- PLACEHOLDER NUMBER
-    self.basestats = pokemonbase.Azumarill.stats
+    self.basetypes = basepokemon.types or pokemonbase.Azumarill.types
+    self.basestats = basepokemon.stats or pokemonbase.Azumarill.stats
     self.nature = nature.Adamant
     self.ev = { -- 4 evs = +1; 252 per is max; 508 max total; up to 25 in each randomly. max of 3 stats
         HP = 0,
@@ -53,7 +54,7 @@ function pokemon.new(basepokemon) -- DEFAULT
     -- glaive rush - opponent uses glaive rush + your move = 2x
     -- crit is 1/24 of happening. 1.5x multiplier
     -- random is between 85% and 100% multiplier
-    -- STAB - tera fighting + fire move + original fire type = 1x
+    -- STAB - tera gives a second or third stab type.
     -- STAB - same type move as pokemon = 1.5x
     -- STAB - tera fire + fire move + original fire type = 2x
     -- STAB - tera fire + fire move + original fire type + adaptability = 2.25x

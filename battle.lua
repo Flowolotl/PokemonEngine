@@ -11,13 +11,15 @@ local battle = {}
 -- drizzle = rain dance
 
 -- TERRAIN STATES:
--- Electric (Electric Terrain)
--- Fairy (Misty Terrain)
--- Psychic (Psychic Terrain)
--- Grass (Grassy Terrain)
+-- NONE
+-- ELECTRIC (Electric Terrain)
+-- FAIRY (Misty Terrain)
+-- PSYCHIC (Psychic Terrain)
+-- GRASS (Grassy Terrain)
 
-battle.weather = "RAIN"
-battle.gravity = 5
+battle.terrain = "NONE"
+battle.weather = "NONE"
+battle.gravity = 0
 
 battle.Pokemon = {
     {
@@ -37,8 +39,6 @@ battle.Pokemon = {
         {}
     }
 }
-
-
 
 function battle.isgravity()
     return battle.gravity > 0
